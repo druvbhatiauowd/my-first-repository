@@ -2,7 +2,26 @@
 
 int main() 
 {
-    
+  int i;
+
+  //infinite loop
+  while (1){
+    printf(" please input the value of i, 0 to exit> ");
+    scanf("%d", &i);
+    if(i==0)
+        break;  // exit the loop
+    else if (i<0)
+       {
+       printf(" you've inputted a negative value, I am going to skip the rest of the loop and branch back\n");       
+       continue;  // skip the rest of the loop and go back to check the loop condition
+       }
+    else
+       printf(" you've inputted the positive value %d\n", i);
+  } // end of loop
+    return 0;
+}
+void Menu()
+{
     printf("Welcome to the Vending Machine! \n Please select an option.\n");
     printf(" 1. Product 1 - Pepsi - 3.5 dhs\n");
     printf(" 2. Product 2 - Lays Salted - 4.00 dhs\n");
@@ -10,7 +29,46 @@ int main()
     printf(" 4. Admin Mode.\n");
     printf(" 5. Exit.\n");
     
-    return 0;
+    scanf("%d", &choice1);
+    
+    if choice1 == 1;
+        printf();
+        number1();
+    else if choice1 == 2;
+        printf();
+        number2();
+    else if choice1 == 3;
+        printf();
+        number3();
+    else if choice1 == 4;
+        printf();
+        number4();
+        
+}
+
+void number1()
+{
+    
+}
+
+void number2() 
+{
+    
+}
+
+void number3() 
+{
+    
+}
+
+void number4() 
+{
+    
+}
+
+void number5() 
+{
+    
 }
 
 
