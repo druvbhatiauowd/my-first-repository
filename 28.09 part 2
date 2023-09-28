@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+int main() 
+{
+    
+    return 0;
+}
+void Menu()
+{
+    printf("Welcome to the Vending Machine! \n Please select an option.\n");
+    printf(" 1. Product 1: Pepsi - 3.5 dhs\n");
+    printf(" 2. Product 2: Lays Salted - 4.00 dhs\n");
+    printf(" 3. Product 3: Hershey's - 5.00 dhs\n");
+    printf(" 4. Admin Mode.\n");
+    printf(" 5. Exit.\n");
+    
+    scanf("%d", &choice1);
+    
+    if choice1 == 1;
+        printf("Please enter 3.5 dhs in increments of 1.00, 0.5, 0.25 dhs only.\n");
+        number1();
+    else if choice1 == 2;
+        printf("Please enter 4.00 dhs in increments of 1.00, 0.5, 0.25 dhs only.\n");
+        number2();
+    else if choice1 == 3;
+        printf("Please enter 5.00 dhs in increments of 1.00, 0.5, 0.25 dhs only.\n");
+        number3();
+    else if choice1 == 4;
+        printf("Please enter the password to access admin mode.\n");
+        number4();
+    else if choice1 == 5:
+        printf("You have chosen to exit. \n Have a nice day!");
+        
+}
+
+void number1()
+{
+    
+}
+
+void number2() 
+{
+    
+}
+
+void number3() 
+{
+    
+}
+
+void number4() 
+{
+    
+}
+
+void number5() 
+{
+    
+}
