@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() 
+{
+    
+    printf("Welcome to the Vending Machine! \n Please select an option.\n");
+    printf(" 1. Product 1 - Pepsi - 3.5 dhs\n");
+    printf(" 2. Product 2 - Lays Salted - 4.00 dhs\n");
+    printf(" 3. Product 3 - Hershey's - 5.00 dhs\n");
+    printf(" 4. Admin Mode.\n");
+    printf(" 5. Exit.\n");
+    
+    return 0;
+}
+
+
