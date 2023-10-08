@@ -1,0 +1,170 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Function Prototypes
+int MenuChoice();
+int number1();
+int number2();
+int number3();
+int number4();
+int number5();
+int choice();
+int MainMenuChoice();
+ 
+//Main menu function
+int MainMenu() 
+{
+    printf("Welcome to the Vending Machine! \n Please select an option.\n");
+    printf("Please enter 1 for Item Purchase Mode.\n");
+    printf("Please enter 2 for Admin Mode.\n");
+    printf("Please enter 3 to exit.\n");
+    
+    return 0;
+}  
+
+//Menu defining items
+int Menu(void)
+{
+
+    float cost1 = 3.5;
+    float cost2 = 3.00;
+    float cost3 = 2.00;
+    
+
+    printf(" 1. Product 1: Pepsi - 3.5 DHS\n");
+    printf(" 2. Product 2: Lays Salted - 3.00 DHS\n");
+    printf(" 3. Product 3: Hershey's - 2.00 DHS\n");
+    
+    return 0;
+}
+int MainMenuChoice() {
+    
+    int choice1;
+    
+    //Scan for choice of product
+    scanf("%d", &choice1);
+    while(1) {
+        if (choice1 == 1){
+            printf("You have chosen Item Purchase mode...\n ");
+            Menu();
+            number1();
+}
+        else if (choice1 == 2){
+            printf("Please enter the password to access admin mode.\n");
+            number2();
+}
+
+        else if (choice1 == 3){
+            printf("You have chosen to exit. \n Have a nice day!");
+            break;
+            exit(0);
+}
+
+}
+return 0;
+}
+int MenuChoice()
+{
+    int choice11;
+    int choice22;
+    int choice33;
+    int choices;
+    
+    
+    //Scan for choice of product
+    scanf("%d", &choices);
+
+    if (choices == 1){
+        printf("Please enter 3.5 dhs in increments of 1.00, 0.5, 0.25 dhs only.\n");
+       
+}
+    else if (choices == 2){
+        printf("Please enter 4.00 dhs in increments of 1.00, 0.5, 0.25 dhs only.\n");
+     
+}
+    else if (choices == 3){
+        printf("Please enter 5.00 dhs in increments of 1.00, 0.5, 0.25 dhs only.\n");
+      
+}
+
+return 0;
+}
+
+int number1()
+{
+    int coin1;
+    int coin2;
+    int coin3;
+    int coin4;
+    
+    float change;
+    
+    //Coins used if loops
+    if (coin1 = 1.00) {
+        
+        if (coin2 = 1.00) {
+            
+            if (coin3 = 1.00) {
+                printf("Dispensing Pepsi... \n Your change is 0.5 dhs. \n");
+
+                change += 0.5;
+
+            }
+            else if (coin3 = 0.5) {
+                printf("Dispensing Pepsi... \n");
+            }
+            else if (coin3 = 0.25) {
+                
+            }
+        }
+    }
+    else if (coin1 = 0.5) {
+        
+        if (coin2 = 1.00) {
+            
+            if (coin3 = 1.00) {
+                printf("Your change is 0.5 dhs. \n");
+            }
+        }
+    }
+    else if (coin1 = 0.25) {
+        
+    }
+    return 0;
+}
+
+int number2(void) 
+{
+    int pass = 1234;
+    int pass1;
+    printf("Please enter your correct password to access Admin Mode. \n");
+    scanf("%d", &pass1);
+    
+    if (pass == pass1) {
+        printf("Admin mode intiated. \n");
+    }
+    else {
+        printf("You have entered the wrong password. \n"); 
+        printf("Terminating program as a security measure. ");
+        exit(0);
+    }
+    return 0;
+}
+
+int number3(void) 
+{
+    printf("Thank you for using our services! \n ");
+    exit(0);
+}
+
+
+int main(void) 
+{
+   MainMenu();
+   MainMenuChoice();
+   Menu();
+   MenuChoice();
+   
+   return 0;
+}
+  
