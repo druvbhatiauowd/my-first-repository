@@ -1,0 +1,76 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Function Prototypes
+
+int mainMenyChoice();
+int mainMenuChoice();
+int mainMenuChoice1();
+int mainMenuChoice2();
+int mainMenuChoice3();
+
+
+int menuChoice();
+int menuChoice1();
+int menuChoice2();
+int menuChoice3();
+int menuChoice4();
+
+
+int itemsPurchase();
+int adminMode();
+int exitt();
+
+int adminMode() {
+    return 0;
+}
+int menu() {
+    
+    return 0;
+}
+int mainMenu() {
+    
+        printf("Press 1 for Items Purchase Mode.\n");
+        printf("Press 2 for Admin Mode.\n");
+        printf("Press 3 to exit the Vending Machine.\n");
+        mainMenuChoice();
+        return 0;
+}
+int mainMenuChoice() {
+    int choice1;
+    scanf("%d", &choice1);
+    while (1) {
+        if (choice1 == 1) {
+            printf("You have selected Purchase Mode. \n Here are the available items.");
+            menu()
+            
+        }
+        else if (choice1 == 2) {
+            printf("Please enter password to access Admin Mode.\n");
+            adminMode();
+            
+        }
+        else if (choice1 == 3) {
+            printf("You have choosen to exit. \n Please confirm your choice. y/n\n");
+            char choice2;
+            if (choice2 == 'y') {
+                printf("Please come back again!\n");
+                exit(0);
+            }
+            else if (choice2 == 'n') {
+                continue;
+            }
+            else {
+                printf("Invalid choice. Returning back to menu.\n");
+            }
+        }
+    }
+    return 0;
+}
+
+
+int main()
+{
+    mainMenu();
+    return 0;
+}
