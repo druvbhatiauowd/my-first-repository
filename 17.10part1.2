@@ -1,0 +1,160 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+// Function Prototypes
+
+int mainMenu();
+int mainMenuChoice();
+int mainMenuChoice();
+int mainMenuChoice1();
+int mainMenuChoice2();
+int mainMenuChoice3();
+
+
+int menuChoice();
+int menuChoice1();
+int menuChoice2();
+int menuChoice3();
+int menuChoice4();
+
+
+int itemsPurchase();
+int adminMode();
+
+int quantityItemA = 25;
+int quantityItemB = 25;
+int quantityItemC = 25;
+int priceItemA;
+int priceItemB;
+int priceItemC;
+
+int adminMode() {
+    int shouldContinue = 1;
+    while (shouldContinue) {
+        printf("Press 1 for Replenishing Items.");
+        printf("Press 2 to change the pricing of items.");
+        printf("Press 3 to display total sales done.");
+        printf("Press 4 to dsiplay item availability.");
+        printf("Press 0 to exit admin mode.");
+    
+        int adminChoice;
+        int shouldContinue1 = 1;
+        
+        scanf("%d", &adminChoice);
+        while( (adminChoice == 1) || (adminChoice ==2) || (adminChoice == 3) || (adminChoice == 4) || (adminChoice == 0) ){
+            if (adminChoice == 1) {
+                printf("Press 1 to replenish stock of item A.");
+                printf("Press 2 to replenish stock of item B.");
+                printf("Press 3 to replenish stock of item C.");
+                int itemChoice;
+                int replenishChoice = 1;
+                int upper = 20; int lower = 1;
+                while (replenishChoice) {
+                    if (itemChoice == 1) {
+                        quantityItemA += (rand() % (upper - lower + 1)) + lower;
+                        int replenishChoice = 0;
+                }
+                    else if (itemChoice == 2) {
+                        quantityItemB += (rand() % (upper - lower + 1)) + lower;
+                        int replenishChoice = 0;
+                }
+                    else if (itemChoice ==3) {
+                        quantityItemC += (rand() % (upper - lower + 1)) + lower;
+                        int replenishChoice = 0;
+                }
+                    else {
+                        printf("Invalid Choice.");
+                }
+                
+                }
+                
+                
+    }   
+            else if (adminChoice == 2) {
+            
+    }
+            else if (adminChoice == 3) {
+        
+    }
+            else if (adminChoice == 4) {
+        
+    }
+            else if (adminChoice == 0) {
+        
+    }
+        else {
+            printf("Wrong input  ");
+    }
+        }
+        else {
+            printf("Wrong Input.");
+        }
+    
+    }
+    }
+        
+int menu() {
+    
+    return 0;
+}
+int mainMenu() {
+    
+        printf("Press 1 for Items Purchase Mode.\n");
+        printf("Press 2 for Admin Mode.\n");
+        printf("Press 3 to exit the Vending Machine.\n");
+        mainMenuChoice();
+        return 0;
+}
+
+int mainMenuChoice() {
+    int choice1;
+    int choice2;
+    int shouldContinue = 1;
+    
+    scanf("%d", &choice1);
+    while (shouldContinue) {
+        if (choice1 == 1) {
+            printf("You have selected Purchase Mode. \n Here are the available items.");
+            menu();
+            
+        }
+        else if (choice1 == 2) {
+            printf("Please enter password to access Admin Mode.\n");
+            int pass = 1111;
+            int passInput;
+            scanf("%d", &passInput);
+            if (pass == passInput) {
+                adminMode();
+    }
+            else {
+                printf("Wrong Password. \n Closing Machine as a security measure. \n");
+                exit(0);
+            }
+        }
+        else if (choice1 == 3) {
+            printf("You have choosen to exit. \n Please confirm your choice. 1/0 \n");
+             scanf("%d", &choice2);
+             
+            if (choice2 == 1) {
+                printf("Come back again!\n");
+                
+                exit(0);
+            }
+            else if (choice2 == 0) {
+                mainMenu();
+            }
+            else {
+                printf("Invalid choice. Returning back to menu.\n");
+                mainMenu();
+            }
+        }
+    }
+    return 0;
+}
+
+
+int main()
+{
+    mainMenu();
+    return 0;}
