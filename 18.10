@@ -31,7 +31,8 @@ float priceItemC = 1.25;
 int total_sales;
 float total_amount;
 
-int adminMode() {
+int adminMode()
+{
     int shouldContinue = 1;
     while (shouldContinue) {
         printf("Press 1 for Replenishing Items.\n");
@@ -53,29 +54,26 @@ int adminMode() {
                 int itemChoice;
                 scanf("%d", &itemChoice);
                 int replenishChoice = 1;
-                int upper = 20; int lower = 1;
-                
-                    if (itemChoice == 1) {
-                        quantityItemA += (rand() % (upper - lower + 1)) + lower;
-                        printf("\nStock of item A: %d ", quantityItemA);
-                        printf("\n\n");
-                }
-                    else if (itemChoice == 2) {
-                        quantityItemB += (rand() % (upper - lower + 1)) + lower;
-                        printf("\nStock of item B: %d ", quantityItemB);
-                        printf("\n\n");
-                }
-                    else if (itemChoice == 3) {
-                        quantityItemC += (rand() % (upper - lower + 1)) + lower;
-                        printf("\nStock of item C: %d ", quantityItemC);
-                        printf("\n\n");
-                }
-                else if (itemChoice == 0) {
+                int upper = 20;
+                int lower = 1;
+
+                if (itemChoice == 1) {
+                    quantityItemA += (rand() % (upper - lower + 1)) + lower;
+                    printf("\nStock of item A: %d ", quantityItemA);
+                    printf("\n\n");
+                } else if (itemChoice == 2) {
+                    quantityItemB += (rand() % (upper - lower + 1)) + lower;
+                    printf("\nStock of item B: %d ", quantityItemB);
+                    printf("\n\n");
+                } else if (itemChoice == 3) {
+                    quantityItemC += (rand() % (upper - lower + 1)) + lower;
+                    printf("\nStock of item C: %d ", quantityItemC);
+                    printf("\n\n");
+                } else if (itemChoice == 0) {
                     replenishChoice = 0;
                     adminMode();
-                }
-                    else {
-                        printf("\nInvalid Choice.\n");
+                } else {
+                    printf("\nInvalid Choice.\n");
                 }
             }
 
@@ -90,28 +88,23 @@ int adminMode() {
                         printf("\nWhat would you like to update it to\n?");
                         scanf("%f", &priceItemA);
                         printf("\nPrice of item A - %.2f", priceItemA);
-                }
-                    else if (choiceItem == 2) {
+                    } else if (choiceItem == 2) {
                         printf("\nWhat would you like to update it to?\n");
                         scanf("%f", &priceItemB);
                         printf("\nPrice of item B - %.2f", priceItemB);
-                }
-                    else if (choiceItem == 3) {
+                    } else if (choiceItem == 3) {
                         printf("\nWhat would you like to update it to?\n");
                         scanf("%f", &priceItemC);
                         printf("\nPrice of item C - %.2f", priceItemC);
+                    } else if (choiceItem == 0) {
+                        adminMode();
+                    } else {
+                        printf("Invalid choice. Please select 1,2,3,0.");
+                    }
                 }
-                else if (choiceItem == 0) {
-                    adminMode();
-                }
-                else {
-                    printf("Invalid choice. Please select 1,2,3,0.");
-                }
-                }
-                
 
-    }
-            else if (adminChoice == 3) {
+
+            } else if (adminChoice == 3) {
                 printf("\nThe total sales are: %d ", total_sales);
                 printf("\nThe money earned is: %f", total_amount);
                 int reset_sales;
@@ -123,38 +116,34 @@ int adminMode() {
                     total_amount = 0;
                     printf("Returning back to admin menu.\n\n");
                     adminMode();
-                }
-                else if (reset_sales == 0) {
+                } else if (reset_sales == 0) {
                     printf("Returning back to admin menu.\n");
                     adminMode();
-                }
-                else {
+                } else {
                     printf("Invalid Choice.\n");
                 }
 
-    }
-            else if (adminChoice == 4) {
+            } else if (adminChoice == 4) {
                 printf("Items available on sale are: \n ");
                 printf("Item A: Lays Chips, stock - %d \n", quantityItemA);
                 printf("Item B: 300 ml Coke stock - %d \n", quantityItemB);
                 printf("Item C: Wrigleys Spearmint Gum, stock- %d \n\n", quantityItemC);
                 break;
-    }
-            else if (adminChoice == 0) {
+            } else if (adminChoice == 0) {
                 printf("Exiting admin mode.\n");
                 mainMenu();
 
-    }
-            else {
+            } else {
                 printf("Wrong input.");
-    }
+            }
         }
     }
     return 0;
 }
-    
 
-int menu() {
+
+int menu()
+{
     int menuLoop = 1;
     while (menuLoop == 1) {
         printf("\nPress 1 for Lays Chips - %.2f ", priceItemA);
@@ -162,6 +151,7 @@ int menu() {
         printf("\nPress 3 for Wrigleys Spearmint Gum - %.2f ", priceItemC);
         printf("\nPress 0 to go back.");
         scanf("%d", &menuChoice1);
+        float coin;
         if (menuChoice1 == 1) {
             int confirm1;
             printf("Are you sure you would like to purchase Lays Chips for %.2f ? 1/0", priceItemA);
@@ -169,71 +159,74 @@ int menu() {
             if (confirm1 == 1) {
                 int coinTotal1 = 0;
                 while (coinTotal1 != priceItemA) {
-                    
+
                 }
+            } else if (confirm1 == 0) {
+                printf("Purchase canceled. \n");
+                printf("Returning to selection menu. \n");
+                menu();
+
+            } else {
+                printf("\nPlease choose either 1/0 to confirm purchase. \n");
             }
-            else if (confirm1 == 0) {
-                
-            }
-            else {
-                 printf("\nPlease choose either 1/0 to confirm purchase. \n");
-             }
-        }
-        else if (menuChoice == 2) {
+        } else if (menuChoice == 2) {
             int confirm2;
-             printf("\nAre you sure you would like to purchase 300 ml Coke for %.2f ? 1/0\n", priceItemB);
-             scanf("%d", &confirm2);
-             if (confirm2 == 1) {
-                 int coinTotal2 = 0;
-                 while (coinTotal2 != priceItemB) {
-                     
-                 }
-             }
-             else if (confirm2 = 0) {
-                 
-             }
-             else {
-                 printf("\nPlease choose either 1/0 to confirm purchase. \n");
-             }
-        }
-        else if (menuChoice == 3) {
+            printf("\nAre you sure you would like to purchase 300 ml Coke for %.2f ? 1/0\n", priceItemB);
+            scanf("%d", &confirm2);
+            if (confirm2 == 1) {
+                int coinTotal2 = 0;
+                
+                while (coinTotal2 != priceItemB) {
+                    
+
+                }
+            } else if (confirm2 == 0) {
+                printf("\nPurchase canceled. \n");
+                printf("\nReturning to selection menu. \n");
+                menu();
+
+            } else {
+                printf("\nPlease choose either 1/0 to confirm purchase. \n");
+            }
+        } else if (menuChoice == 3) {
             int confirm3;
-             printf("\nAre you sure you would like to purchase Wrigelys Spearmint Gum for %.2f ? 1/0\n", priceItemC);
-             scanf("%d", &confirm3);
-             if (confirm3 = 1) {
-                 int coinTotal3 = 0;
-                 while (coinTotal3 != priceItemC) {
-                     
-                 }
-             }
-             else if (confirm3 = 0) {
-                 
-             }
+            printf("\nAre you sure you would like to purchase Wrigelys Spearmint Gum for %.2f ? 1/0\n", priceItemC);
+            scanf("%d", &confirm3);
+            if (confirm3 = 1) {
+                int coinTotal3 = 0;
+                while (coinTotal3 != priceItemC) {
+
+                }
+            } else if (confirm3 == 0) {
+                printf("Purchase canceled. \n");
+                printf("Returning to selection menu. \n");
+                menu();
+
              else {
-                 printf("\nPlease choose either 1/0 to confirm purchase. \n");
-             }
-        }
-        else if (menuChoice == 0) {
+                printf("\nPlease choose either 1/0 to confirm purchase. \n");
+            }
+        } else if (menuChoice == 0) {
             printf("Cancelling purchase.");
             mainMenu();
-        }
-        else {
+        } else {
             printf("Wrong input for item.");
             continue;
         }
-    
+
     }
     return 0;
 }
-int mainMenu() {
-        printf("Press 1 for Items Purchase Mode.\n");
-        printf("Press 2 for Admin Mode.\n");
-        printf("Press 3 to exit the Vending Machine.\n");
-        mainMenuChoice();
-        return 0;
+int mainMenu()
+{
+    printf("Press 1 for Items Purchase Mode.\n");
+    printf("Press 2 for Admin Mode.\n");
+    printf("Press 3 to exit the Vending Machine.\n");
+    mainMenuChoice();
+    return 0;
 }
 
-int mainMenuChoice() {
+int mainMenuChoice()
+{
     int choice1;
     int choice2;
     int shouldContinue = 1;
@@ -245,33 +238,28 @@ int mainMenuChoice() {
             printf("Here are the available items.\n\n");
             menu();
 
-        }
-        else if (choice1 == 2) {
+        } else if (choice1 == 2) {
             printf("Please enter password to access Admin Mode.\n");
             int pass = 1111;
             int passInput;
             scanf("%d", &passInput);
             if (pass == passInput) {
                 adminMode();
-    }
-            else {
+            } else {
                 printf("Wrong Password. \n Closing Machine as a security measure. \n");
                 exit(0);
             }
-        }
-        else if (choice1 == 3) {
+        } else if (choice1 == 3) {
             printf("You have choosen to exit. \n Please confirm your choice. 1/0 \n");
-             scanf("%d", &choice2);
+            scanf("%d", &choice2);
 
             if (choice2 == 1) {
                 printf("Come back again!\n");
 
                 exit(0);
-            }
-            else if (choice2 == 0) {
+            } else if (choice2 == 0) {
                 mainMenu();
-            }
-            else {
+            } else {
                 printf("Invalid choice. Returning back to menu.\n");
                 mainMenu();
             }
@@ -281,7 +269,8 @@ int mainMenuChoice() {
 }
 
 
-int main() {
+int main()
+{
     mainMenu();
     return 0;
 }
