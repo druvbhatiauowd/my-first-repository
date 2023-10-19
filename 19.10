@@ -44,9 +44,9 @@ int adminMode()
 
         int adminChoice;
         int replenishChoice = 1;
-        (quantityItemA < min) ? printf("Alert! Stock of Item A is less than %d ", min);
-        (quantityItemB < min) ? printf("Alert! Stock of Item B is less than %d ", min);
-        (quantityItemC < min) ? printf("Alert! Stock of Item C is less than %d ", min);
+        (quantityItemA < min) ? printf("Alert! Stock of Item A is less than %d ", min) : printf(" ");
+        (quantityItemB < min) ? printf("Alert! Stock of Item B is less than %d ", min) : printf(" ");
+        (quantityItemC < min) ? printf("Alert! Stock of Item C is less than %d ", min) : printf(" ");
         
 
         scanf("%d", &adminChoice);
@@ -214,7 +214,7 @@ int menu()
 
                 printf("Please input 0.25, 0.5 or 1.00 dhs.");
                 while (coinTotal2 != priceItemB) {
-                    scanf("%f", &coin);
+                    scanf("%f", &coin2);
                     if ((coin2 != 0.25) && (coin2 != 0.5) && (coin2 != 1.00)) {
                         printf("Invalid coin. \n Returning back to menu. \n");
                         menu();
@@ -257,7 +257,7 @@ int menu()
 
                 printf("Please input 0.25, 0.5 or 1.00 dhs.");
                 while (coinTotal3 != priceItemC) {
-                    scanf("%f", &coi3);
+                    scanf("%f", &coin3);
                     if ((coin3 != 0.25) && (coin3 != 0.5) && (coin3 != 1.00)) {
                         printf("Invalid coin. \n Returning back to menu. \n");
                         menu();
