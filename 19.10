@@ -17,6 +17,7 @@ int menuChoice1;
 int menuChoice2;
 int menuChoice3;
 int menuChoice4;
+int min;
 
 
 int itemsPurchase();
@@ -41,6 +42,10 @@ int adminMode()
         printf("Press 4 to display item availability.\n");
         printf("Press 0 to exit admin mode.\n");
 
+        (quantityItemA < min) ? printf("Alert! Stock of Item A is less than %d ", min) : printf(" ");
+        (quantityItemB < min) ? printf("Alert! Stock of Item B is less than %d ", min) : printf(" ");
+        (quantityItemC < min) ? printf("Alert! Stock of Item C is less than %d ", min) : printf(" ");
+        
         int adminChoice;
         int replenishChoice = 1;
 
@@ -176,7 +181,7 @@ int menu()
                     else {
                         printf("Added %.2f. ", coin);
                         coinTotal1 += coin;
-                        printf("Added amount is %f ", coinTotal1);
+                        printf("Added amount is %.2f ", coinTotal1);
                     }
 
                     if (coinTotal1 == priceItemA) {
@@ -202,33 +207,36 @@ int menu()
             printf("Are you sure you would like to purchase 300 ml Coke for %.2f ? 1/0", priceItemB);
             scanf("%d", &confirm2);
             if (confirm2 == 1) {
-                float coinTotal2 = 0;
-                float coin;
+                float coinTotal2;
+                float coin2;
+                coinTotal2 = 0;
+                coin2 = 0;
+
                 printf("Please input 0.25, 0.5 or 1.00 dhs.");
-                while (coinTotal2 != priceItemB) {
-                    scanf("%f", &coin);
-                    if ((coin != 0.25) && (coin != 0.5) && (coin != 1.00)) {
+                while (coinTotal2 != priceItemC) {
+                    scanf("%f", &coin2);
+                    if ((coin2 != 0.25) && (coin2 != 0.5) && (coin2 != 1.00)) {
                         printf("Invalid coin. \n Returning back to menu. \n");
                         menu();
                     }
 
 
                     else {
-                        printf("Added %.2f. ", coin);
-                        coinTotal2 += coin;
+                        printf("Added %.2f. ", coin2);
+                        coinTotal2 += coin2;
+                        printf("Added amount is %.2f ", coinTotal2);
                     }
 
                     if (coinTotal2 == priceItemB) {
                         printf("Dispensing Item B");
-                        quantityItemA -= 1;
+                        quantityItemB -= 1;
                         total_sales += 1;
                         total_amount += priceItemB;
+                        menu();
 
                     }
-                }
-                coin = 0;
-                coinTotal2 = 0;
 
+                }
             } else if (confirm2 == 0) {
                 printf("Purchase canceled. \n");
                 printf("Returning to selection menu. \n");
@@ -239,24 +247,49 @@ int menu()
             }
         } else if (menuChoice1 == 3) {
             int confirm3;
-            printf("\nAre you sure you would like to purchase Wrigelys Spearmint Gum for %.2f ? 1/0\n", priceItemC);
+            printf("Are you sure you would like to purchase Wrigleys Gum for %.2f ? 1/0", priceItemA);
             scanf("%d", &confirm3);
-            if (confirm3 = 1) {
-                int coinTotal3 = 0;
+            if (confirm3 == 1) {
+                float coinTotal3;
+                float coin3;
+                coinTotal3 = 0;
+                coin3 = 0;
+
+                printf("Please input 0.25, 0.5 or 1.00 dhs.");
                 while (coinTotal3 != priceItemC) {
+                    scanf("%f", &coin3);
+                    if ((coin3 != 0.25) && (coin3 != 0.5) && (coin3 != 1.00)) {
+                        printf("Invalid coin. \n Returning back to menu. \n");
+                        menu();
+                    }
 
 
+                    else {
+                        printf("Added %.2f. ", coin3);
+                        coinTotal3 += coin3;
+                        printf("Added amount is %.2f ", coinTotal3);
+                    }
 
+                    if (coinTotal3 == priceItemC) {
+                        printf("Dispensing Item C");
+                        quantityItemC -= 1;
+                        total_sales += 1;
+                        total_amount += priceItemC;
+                        menu();
+
+                    }
+                
 
                 }
             } else if (confirm3 == 0) {
                 printf("Purchase canceled. \n");
                 printf("Returning to selection menu. \n");
                 menu();
+
             } else {
                 printf("\nPlease choose either 1/0 to confirm purchase. \n");
             }
-        } else if (menuChoice == 0) {
+        }  else if (menuChoice == 0) {
             printf("Cancelling purchase.");
             mainMenu();
         } else {
@@ -320,11 +353,6 @@ int mainMenuChoice()
 }
 
 
-int main()
-{
-    mainMenu();
-    return 0;
-}
 int main()
 {
     mainMenu();
